@@ -1,0 +1,8 @@
+{
+    "ID": "webhook",
+    "Address": "https://webhook.site/087de8ef-52ab-4d58-8c92-06cbca3c4ef4",
+    "Type": "webhook",
+    "Topics": {
+      "*": ["*"]
+    }
+  }
