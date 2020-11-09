@@ -1,5 +1,5 @@
 import os
-
+import json
 import click
 import requests
 
@@ -33,11 +33,12 @@ def create(id, url):
     }
     response = requests.post(
         f'{NOMAD_ADDR}/v1/event/sink/{id}',
-        data=data)
+        data=json.dumps(data))
     if response.status_code == 200:
         click.echo(f'Webhook created and sending events to {url}!')
         return True
     else:
+        print(response.text)
         click.echo(f'Something went wrong... Code {response.status_code}!')
 
 
